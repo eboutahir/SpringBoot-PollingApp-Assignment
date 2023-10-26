@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="css/style2.css">
+    <title>Quiz Spring Boot</title>
+</head>
+<body>
+
+
+<form>
+    <div th:each="question : ${questions}">
+        <section>
+            <main>
+                <div class="text-container">
+                    <h3>Spring Boot Quiz</h3>
+                    <p th:text="'Question ' + ${question.id } + '/' + 6" ></p>
+                    <p th:text="${question.title}"></p>
+                </div>
+                <div class="quiz-options">
+                    <input type="radio" class="input-radio four-a jshdgdgwgdwfdfwdwjfdjwwdwdin" id="four-a" name="no-4" required="">
+                    <label class="radio-label jsjwjdwjdwjdwin" >
+                        <span class="alphabet">A</span> <p th:text="${question.rep1}"> </p><img class="icon jfdedgwfzexf4hjin" src="https://res.cloudinary.com/dvhndpbun/image/upload/v1588517753/jfdedgwfzexf4hjin.svg">
+                    </label>
+                    <input type="radio" class="input-radio four-b jshdgdgwgdwfdfwdwjfdjwwdwdco" id="four-b" name="no-4" required="">
+                    <label class="radio-label jsjwjdwjdwjdwco" >
+                        <span class="alphabet">B</span> <p th:text="${question.rep2}"> </p> <img class="icon jdsjkefkefkefefexco" src="https://res.cloudinary.com/dvhndpbun/image/upload/v1588518387/jdsjkefkefkefefexco.svg">
+                    </label>
+                    <input type="radio" class="input-radio four-c jshdgdgwgdwfdfwdwjfdjwwdwdin" id="four-c" name="no-4" required="">
+                    <label class="radio-label jsjwjdwjdwjdwin" >
+                        <span class="alphabet">C</span> <p th:text="${question.rep3}"> </p><img class="icon jfdedgwfzexf4hjin" src="https://res.cloudinary.com/dvhndpbun/image/upload/v1588517753/jfdedgwfzexf4hjin.svg">
+                    </label>
+                </div>
+
+            </main>
+        </section>
+    </div>
+
+
+
+
+
+</form>
+
+
+
+</body>
+</html>
