@@ -1,0 +1,6 @@
+
+<ul id="list">
+    <li th:each="task : ${list}" th:class="${task.status == null ? '' : 'done'}">
+        <p th:text="${task.title}"></p>
+    </li>
+</ul>
