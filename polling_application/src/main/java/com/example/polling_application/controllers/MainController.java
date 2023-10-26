@@ -1,7 +1,6 @@
 package com.example.polling_application.controllers;
 
 import com.example.polling_application.entities.Question;
-import com.example.polling_application.entities.QuestionForm;
 import com.example.polling_application.entities.User;
 import com.example.polling_application.services.QuestionService;
 import com.example.polling_application.services.UserService;
@@ -39,8 +38,11 @@ public class MainController {
         submitted = false;
         User newUser = new User();
         newUser.setUsername(username);
-        User savedUser = userService.AddUser(newUser);
-        // Vous pouvez utiliser savedUser si nécessaire
+        userService.AddUser(newUser);
+
+        //Affocher les qsts
+        List<Question> allqst = questionService.getAllQuestions();
+        m.addAttribute("questions",allqst);
 
 
         return "quiz";
