@@ -52,7 +52,7 @@ public class QuizService {
 
 
     public Integer calculateResult(Integer id, List<Response> responses) {
-        Quiz quiz = quizDao.findBy(id).get();
+        Quiz quiz = quizDao.findById(id).get();
         List<Question> questions = quiz.getQuestions();
         int correct = 0;
         int i = 0;
