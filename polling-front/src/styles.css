@@ -1,0 +1,19 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+@keyframes moveTitle {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .move-title {
+    animation: moveTitle 4s infinite;
+  }
+  
