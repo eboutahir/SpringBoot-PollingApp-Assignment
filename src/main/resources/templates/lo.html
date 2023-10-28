@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Loading Page Demo</title>
+    <link rel="stylesheet" th:href="@{/css/ss.css}" >
 
-    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
     <section>
         <div class="loader"></div>
     </section>
+    <script>
+        setTimeout(function () {
+            th:window.location.href='src/main/resources/templates/bu.html';
+        }, 3000);
+    </script>
 </body>
 </html>
