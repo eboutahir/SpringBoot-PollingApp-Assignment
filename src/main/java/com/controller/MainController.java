@@ -31,7 +31,7 @@ public class MainController {
 	
 	@GetMapping("/")
 	public String home() {
-		return "lo.html";
+		return "loa.html";
 	}
 	
 	@PostMapping("/quiz")
