@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{./static/css/quiz.css}">
+	<title>Quiz Page</title>
+</head>
+<body>
+
+	<!-- Importing NavBar -->
+	<div th:insert="menu.html :: navbar"></div>
+	
+	<div class="container py-5 px-4">
+		<h1 class="card-title">cocher la bonne réponse</h1>
+		
+		<form action="submit" method="POST" th:object=${qForm}>
+			<div class="ques-box text-light" style="background-color:#E1BEE7;" th:each="ques, i: ${qForm.questions}">
+				<p class="title"  style="color:#212121;" th:text="${ques.title}" ></p>
+				
+				<div class="option">
+					<input type="radio" th:name="|questions[${i.index}].chose|" th:value="1" />
+					<p th:text="${ques.optionA}"></p>
+				</div>
+				
+				<div class="option">
+					<input type="radio" th:name="|questions[${i.index}].chose|" th:value="2" />
+					<p th:text="${ques.optionB}"></p>
+				</div>
+				
+				<div class="option">
+					<input type="radio" th:name="|questions[${i.index}].chose|" th:value="3" />
+					<p th:text="${ques.optionC}"></p>
+				</div>
+				
+				<input type="hidden" th:name="|questions[${i.index}].quesId|" th:value="${ques.quesId}" />
+				<input type="hidden" th:name="|questions[${i.index}].title|" th:value="${ques.title}" />
+				<input type="hidden" th:name="|questions[${i.index}].ans|" th:value="${ques.ans}" />
+			</div>
+			
+			<button type="submit" class="btn  d-block mx-auto mt-4"  style="background-color:#9C27B0;">Terminé</button>
+		</form>
+	</div>
+
+	<!-- Importing Footer -->
+	<div th:insert="Pagefooter.html :: footer"></div>
+	
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
