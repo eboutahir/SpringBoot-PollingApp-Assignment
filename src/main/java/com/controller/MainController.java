@@ -54,7 +54,7 @@ public class MainController {
 	public String submit(@ModelAttribute QuestionForm qForm, Model m) {
 		if(!submitted) {
 			result.setTotalCorrect(qService.getResult(qForm));
-			qService.saveScore(result);
+			qService.saveScore((javax.xml.transform.Result) result);
 			submitted = true;
 		}
 		
@@ -63,7 +63,7 @@ public class MainController {
 	
 	@GetMapping("/score")
 	public String score(Model m) {
-		List<Result> sList = qService.getTopScore();
+		List<javax.xml.transform.Result> sList = qService.getTopScore();
 		m.addAttribute("sList", sList);
 		
 		return "scoreboard.html";

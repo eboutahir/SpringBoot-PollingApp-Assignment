@@ -2,13 +2,14 @@ package com.service;
 
 import com.model.Question;
 import com.model.QuestionForm;
-import com.model.Result;
 import com.repository.QuestionRepo;
 import com.repository.ResultRepo;
+import org.aspectj.weaver.patterns.TypePatternQuestions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.xml.transform.Result;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -17,7 +18,7 @@ import java.util.Random;
 public class QuizService {
 	
 	@Autowired
-	Question question;
+	TypePatternQuestions.Question question;
 	@Autowired
 	QuestionForm qForm;
 	@Autowired
