@@ -24,12 +24,10 @@ public class ParticipantController {
     }
 
     @PostMapping("/Add")
-    public void addParticipant1() {
-        Participant participant = new Participant();
-        participant.setEmail("younsstokim@gmail.com");
-        participant.setName("younis tatot");
-        participant.setNumber("0649156518");
+    public void addParticipant1(@RequestBody   Participant participant) {
         participantServices.AddParticipant(participant);
     }
+
+
 
 }
