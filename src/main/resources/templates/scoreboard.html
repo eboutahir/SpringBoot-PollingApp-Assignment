@@ -2,39 +2,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" th:href="@{/css/score.css}">
-	<title>Score Board</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Score Board</title>
+    <link rel="stylesheet" th:href="@{/css/ress.css}">
 </head>
+
 <body>
 
-	<!-- Importing NavBar -->
-	<div th:insert="navbar.html :: navbar"></div>
-	
-	<!-- Main Container Start -->
-	<div class="main-container container py-5 px-4">
-		<h3 class="bg-danger text-center mb-5 p-2">Top Scores Of All Time</h3>
-		
-		<table class="bg-dark text-light">
-			<tr>
-				<th>Name</th>
-				<th>Score</th>
-			</tr>
-			<tr th:each="score : ${sList}">
-				<td th:text="${score.username}"></td>
-				<td th:text="${score.totalCorrect}"></td>
-			</tr>
-		</table>
-	</div>
-	
-	<!-- Importing Footer -->
-	<div th:insert="footer.html :: footer"></div>
-	
-	<!-- Bootstrap JS -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+<div th:insert="navbar.html :: navbar"></div>
+
+<main class="table">
+    <section class="table__header">
+        <h1>User's QUizzo Score🫣 </h1>
+        <div class="input-group">
+            <input type="search" placeholder="Search Data...">
+            <img th:src="@{/images/search.png}" alt="">
+        </div>
+
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+            <tr>
+                <th> UserName<span class="icon-arrow">&UpArrow;</span></th>
+                <th> Score <span class="icon-arrow">&UpArrow;</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="score : ${sList}">
+                <td th:text="${score.username}"></td>
+                <td>
+                    <p class="status delivered" th:text="${score.totalCorrect}"/>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </section>
+</main>
 </body>
+
 </html>

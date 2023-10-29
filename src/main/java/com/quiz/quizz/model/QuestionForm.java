@@ -1,4 +1,4 @@
-package com.model;
+package com.quiz.quizz.model;
 
 import org.springframework.stereotype.Component;
 

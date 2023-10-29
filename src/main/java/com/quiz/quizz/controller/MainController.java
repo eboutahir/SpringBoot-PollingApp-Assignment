@@ -1,8 +1,8 @@
-package com.controller;
+package com.quiz.quizz.controller;
 
-import com.model.QuestionForm;
-import com.model.Result;
-import com.service.QuizService;
+import com.quiz.quizz.model.QuestionForm;
+import com.quiz.quizz.model.Result;
+import com.quiz.quizz.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +29,7 @@ public class MainController {
 		return result;
 	}
 
-	@GetMapping("/")
+	@GetMapping("/home")
 	public String home() {
 		return "loa.html";
 	}

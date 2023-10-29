@@ -1,4 +1,4 @@
-package com.model;
+package com.quiz.quizz.model;
 
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;

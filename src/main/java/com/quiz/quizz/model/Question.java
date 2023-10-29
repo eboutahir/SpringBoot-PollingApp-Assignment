@@ -1,9 +1,7 @@
-package com.model;
+package com.quiz.quizz.model;
 
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
-
-import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Component
 @Entity
@@ -11,8 +9,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 public class Question {
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int quesId;
 	private String title;
 	private String optionA;
