@@ -1,0 +1,74 @@
+/* Réinitialisation des styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ff7200; /* Couleur orange pour le background */
+    color: #fff; /* Couleur du texte en blanc pour un meilleur contraste */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Conteneur principal avec un arrière-plan blanc centré */
+.main-container {
+    background-color: #fff; /* Couleur de fond du conteneur principal en blanc */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Styles pour le tableau */
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+/* Styles pour les lignes du tableau */
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+/* Styles pour les en-têtes de tableau */
+th {
+    padding: 10px;
+    background-color: #007bff; /* Couleur bleue pour les en-têtes de tableau */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 28px; /* Augmenter la taille du texte des en-têtes */
+    animation: colorChange 3s infinite;
+}
+
+/* Styles pour les cellules du tableau */
+td {
+    padding: 10px;
+    background-color: #ff007f; /* Couleur rose pour les cellules du tableau */
+    color: #fff; /* Couleur du texte en blanc pour un meilleur contraste */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 24px; /* Augmenter la taille du texte des cellules */
+    animation: colorChange 3s infinite;
+}
+
+/* Ajouter la classe bg-orange pour définir la couleur orange */
+.bg-orange {
+    background-color: #000000;
+    color: #fff; /* Couleur du texte en blanc pour un meilleur contraste */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation de changement de couleur pour les en-têtes et les cellules du tableau */
+@keyframes colorChange {
+    0% { color: #ff7200; } /* Couleur de départ (orange) */
+    50% { color: #007bff; } /* Couleur intermédiaire (bleu) */
+    100% { color: #ff7200; } /* Couleur de retour à l'orange */
+}
+
