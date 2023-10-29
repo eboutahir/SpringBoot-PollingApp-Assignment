@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Quize</title>
+	<link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+<div class="main">
+	<div class="navbar">
+		<div class="menu">
+			<ul>
+				<li><a href="#" class="logo">Quize Application</a></li>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">Scoreboard</a></li>
+				<li><a href="#">CONTACT</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		<img src="/images/orange.jpg" alt="">
+		<div class="form">
+			<h2>Enter Your Name</h2>
+			<form  action="/quiz" method="POST">
+			<input type="text" name="username" placeholder="Enter your Name">
+			<button class="btnn"><a href="">Start</a></button>
+				<p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>

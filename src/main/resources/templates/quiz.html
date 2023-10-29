@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/quiz.css"> <!-- Liez votre propre fichier CSS -->
+	<title>Quiz Page</title>
+</head>
+<body>
+<div class="container">
+	<div class="header">
+		<h1 class="quiz-title">Today's Quiz</h1>
+	</div>
+	<form action="submit" method="POST" th:object=${qForm}>
+		<div class="question-container" th:each="ques, i: ${qForm.questions}">
+			<div class="question">
+				<p class="question-text" th:text="${ques.title}"></p>
+			</div>
+			<div class="options">
+				<label>
+					<input type="radio" th:name="|questions[${i.index}].chose|" th:value="1" />
+					<span class="option-text" th:text="${ques.optionA}"></span>
+				</label>
+				<label>
+					<input type="radio" th:name="|questions[${i.index}].chose|" th:value="2" />
+					<span class="option-text" th:text="${ques.optionB}"></span>
+				</label>
+				<label>
+					<input type="radio" th:name="|questions[${i.index}].chose|" th:value="3" />
+					<span class="option-text" th:text="${ques.optionC}"></span>
+				</label>
+			</div>
+		</div>
+		<button type="submit" class="submit-button">check Answer</button>
+	</form>
+</div>
+</body>
+</html>
+
