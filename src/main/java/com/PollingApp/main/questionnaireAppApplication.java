@@ -1,4 +1,4 @@
-package com.devrezaur.main;
+package com.PollingApp.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

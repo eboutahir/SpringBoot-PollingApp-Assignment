@@ -1,8 +1,8 @@
-package com.devrezaur.main.DAO;
+package com.PollingApp.main.DAO;
 
+import com.PollingApp.main.models.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.devrezaur.main.models.Question;
 
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Integer> {

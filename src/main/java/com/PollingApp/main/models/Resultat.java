@@ -1,4 +1,4 @@
-package com.devrezaur.main.models;
+package com.PollingApp.main.models;
 
 import javax.persistence.*;
 

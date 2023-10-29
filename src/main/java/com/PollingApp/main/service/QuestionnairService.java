@@ -1,28 +1,28 @@
-package com.devrezaur.main.service;
+package com.PollingApp.main.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.PollingApp.main.models.Question;
+import com.PollingApp.main.models.Resultat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import com.devrezaur.main.models.Question;
-import com.devrezaur.main.models.QuestionChoix;
-import com.devrezaur.main.models.Resultat;
-import com.devrezaur.main.DAO.QuestionRepository;
-import com.devrezaur.main.DAO.ResultatRepository;
+import com.PollingApp.main.models.QuestionChoix;
+import com.PollingApp.main.DAO.QuestionRepository;
+import com.PollingApp.main.DAO.ResultatRepository;
 
 @Service
 public class QuestionnairService {
 
 	@Autowired
-	Question question;
+    Question question;
 	@Autowired
 	QuestionChoix qForm;
 	@Autowired
 	QuestionRepository qRepo;
 	@Autowired
-	Resultat result;
+    Resultat result;
 	@Autowired
 	ResultatRepository rRepo;
 

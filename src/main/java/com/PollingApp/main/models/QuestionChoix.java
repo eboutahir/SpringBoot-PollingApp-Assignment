@@ -1,4 +1,4 @@
-package com.devrezaur.main.models;
+package com.PollingApp.main.models;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
