@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>quiz</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+<img class="wave" th:src="@{/images/wave.png}">
+<div class="container">
+	<div class="img">
+		<img th:src="@{/images/bg.svg}" alt="bg">
+	</div>
+	<div class="login-content">
+		<form action="/quiz" method="POST">
+			<img th:src="@{/images/avatar.svg}" >
+			<h2 class="title">Welcome</h2>
+			<div class="input-div one">
+				<div class="i">
+					<i class="fas fa-user"></i>
+				</div>
+				<div class="div">
+					<h5>Enter Your Name</h5>
+					<input type="text" class="input" name="username">
+					<p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
+				</div>
+			</div>
+
+			<input type="submit" class="btn" value="Start Quiz">
+		</form>
+	</div>
+</div>
+<script type="text/javascript"  th:src="@{/js/main.js}"></script>
+</body>
+</html>
+
