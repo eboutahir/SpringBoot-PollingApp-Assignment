@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz app</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+  <div class="app">
+    <h1>Questionnaire</h1>  
+    
+    <div th:each="question, questionIndex : ${questions}" class="quiz" th:id="'quiz' + ${questionIndex.index}">
+      <h2 th:text="${question.text}"></h2>
+      <div class="choices">
+        <div th:each="choice : ${question.choices}" class="choice">
+          <button class="btn" th:text="${choice.text}" onclick="colorChoice(this)"></button>
+        </div>
+      </div>
+      <button class="next-button">Next</button>
+    </div>
+    <div id="result" style="display: none;">
+     
+      <h2>Réponses aux questions :</h2><br>
+      
+      <h3 class="reponse" th:each="question, questionIndex : ${questions}" th:id="'question-' + ${questionIndex.index}">
+        <span th:text="${question.text}"></span>
+        <br />
+        Choix correct :
+        <span th:each="choice : ${question.choices}" th:if="${choice.is_correct}">
+            <span th:text="${choice.text}"></span>
+      </span>
+    </h3>
+   <h2>note:</h2>
+        
+    
+    </div>
+  </div>
+
+  <script>
+    function colorChoice(button) {
+      // Réinitialiser la couleur de fond de tous les boutons de choix
+      const allChoiceButtons = document.querySelectorAll(".choice button");
+      allChoiceButtons.forEach(choiceButton => {
+        choiceButton.style.backgroundColor = "";
+      });
+
+      // Colorer en vert le bouton sur lequel l'utilisateur a cliqué
+      button.style.backgroundColor = "blue";
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const questions = document.querySelectorAll(".quiz");
+      const nextButtons = document.querySelectorAll(".next-button");
+
+      let currentQuestionIndex = 0;
+
+      nextButtons.forEach((button, index) => {
+        button.addEventListener("click", function() {
+          // Masquer la question actuelle
+          questions[currentQuestionIndex].style.display = "none";
+
+          // Afficher la question suivante
+          currentQuestionIndex = index + 1;
+          if (currentQuestionIndex < questions.length) {
+            questions[currentQuestionIndex].style.display = "block";
+          } else {
+            // Afficher le bouton "Envoyer" si c'est la dernière question
+            document.getElementById("result").style.display = "block";
+          }
+        });
+      });
+
+      // Masquer toutes les questions sauf la première
+      for (let i = 1; i < questions.length; i++) {
+        questions[i].style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
