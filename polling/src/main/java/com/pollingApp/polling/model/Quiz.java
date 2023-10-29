@@ -22,10 +22,5 @@ public class Quiz {
     private Long id;
 
     @Column(name = "title")
-    @NotEmpty(message = "tast title is empty")
     private String title;
-
-    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Question> questions = new ArrayList<>();
-
 }

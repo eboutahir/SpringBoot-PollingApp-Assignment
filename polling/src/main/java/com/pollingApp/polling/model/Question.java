@@ -23,10 +23,6 @@ public class Question {
     @Column(name = "question")
     private String question;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Answer> answers = new ArrayList<>();
-
-    @ManyToOne
-    @JoinColumn(name = "quiz_id")
-    private Quiz quiz;
+    @Column(name = "quiz_id")
+    private Long quiz_id;
 }

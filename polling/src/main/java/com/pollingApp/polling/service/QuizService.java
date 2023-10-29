@@ -2,6 +2,8 @@ package com.pollingApp.polling.service;
 
 
 import com.pollingApp.polling.dao.QuizRepository;
+import com.pollingApp.polling.dto.QuizDto;
+import com.pollingApp.polling.model.Question;
 import com.pollingApp.polling.model.Quiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,11 @@ public class QuizService {
     public Quiz createQuiz(Quiz quiz) {
         return quizRepository.save(quiz);
     }
+//    public void setQuizForQuestions(QuizDto quiz) {
+//        for (QuestionDto question : quiz.getQuestions()) {
+//            question.setQuiz(quiz);
+//        }
+//    }
 
     public Quiz updateQuiz(Long id, Quiz quiz) {
         quiz.setId(id);
