@@ -1,0 +1,37 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	overflow-x: hidden;
+	background-image:url('/images/back_img.jpg');
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-container {
+	min-height: calc(100vh - 136px);
+
+}
+
+.card {
+	width: 50%;
+	margin-top: 100px;
+	padding:20px;
+	margin-right:150px;
+}
+
+img {
+	width: 100%;
+	max-width: 350px;
+	position: relative;
+	display: block;
+	margin: -180px auto 50px auto;
+}
+
+.card button {
+	width: 45%;
+}

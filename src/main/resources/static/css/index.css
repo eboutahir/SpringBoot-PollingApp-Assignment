@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	overflow-x: hidden;
+	background-image:url('/images/back_img.jpg');
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-container {
+	min-height: calc(100vh - 136px);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:"text-box";
+	row-gap: 50px;
+	column-gap: 50px;
+	margin-left:120px;
+}
+
+@media screen and (min-width:850px) {
+	.main-container {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "text-box";
+	}
+}
+
+.card {
+	width: 150%;
+	padding:10px;
+
+}
+
+.card input {
+    border: none;
+    border-bottom: 2px solid black;
+	margin-bottom: 40px;
+	height: 35px;
+}
+
+
+.warning {
+	position: relative;
+	margin-top: -37px;
+}
+.btn-score{
+    text-decoration:none;
+    color: white;
+    margin-top:5px;
+}
+
