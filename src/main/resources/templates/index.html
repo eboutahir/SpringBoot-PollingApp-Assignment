@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/i.css}">
+    <title>Home Page</title>
+</head>
+<body>
+
+<div class="main">
+
+    <!-- Sign up form -->
+
+    <!-- Sing in  Form -->
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img th:src="@{/images/i.jpg}"   alt="sing up image"></figure>
+                    <center>   <a href="/score" class="signup-image-link">Score</a> </center>
+
+                </div>
+
+                <div class="signin-form">
+                    <center> <h2 class="form-title">Quiz-App</h2></center>
+                    <form action="/quiz" method="POST" class="register-form" id="login-form">
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="username" placeholder="Your Name"/>
+                            <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
+                        </div>
+
+                        <div class="form-group form-button">
+
+                            <center> <input type="submit" name="signin" id="signin" class="form-submit" value="Sta rt"/></center>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- JS -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
